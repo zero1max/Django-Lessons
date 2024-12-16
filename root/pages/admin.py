@@ -1,3 +1,8 @@
 from django.contrib import admin
+from pages.models import Post
 
-# Register your models here.
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'publish', 'status']
+    list_filter = ['status', 'created', 'publish',]
+    search_fields = ['title', 'body']
