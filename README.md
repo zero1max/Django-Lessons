@@ -3,3 +3,6 @@
 
 <code>cd root</code>
 
+<h2>Second</h2>
+
+<code>python manage.py makemigrations</code>
