@@ -20,3 +20,7 @@
 <h2>Fifth</h2>
 
 <code>python manage.py runserver</code>
+
+<h2>ESLATMA!</h2>
+
+<p>Agar bloglar chiqmasa, admin paneldan ma'lumotni published qilib qo'yish kerak!</p>
