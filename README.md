@@ -17,6 +17,6 @@
 
 <p>SuperUser yaratib olasiz!</p>
 
-<!-- <h2>Fifth</h2>
+<h2>Fifth</h2>
 
-<code>python manage.py runserver</code> -->
+<code>python manage.py runserver</code>
