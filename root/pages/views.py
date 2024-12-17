@@ -1,11 +1,15 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from django.http import Http404
 from .models import Post
 
 # Create your views here.
-def home(request):
-    return render(request, template_name='page/index.html')
+def post_list(request):
+    posts = Post.published.all()
+    return render(request, "blog/post/list.html", {'posts': posts})
 
-def posts(request):
-    posts = Post.objects.all()
-    context = {'posts': posts}
-    return render(request, template_name='page/post.html', context=context)
+def post_detail(request, id):
+    try:
+        post = Post.published.get(id=id)
+    except Post.DoesNotExist:
+        raise Http404("Post not found")
+    return render(request, "blog/post/detail.html", {'post': post})

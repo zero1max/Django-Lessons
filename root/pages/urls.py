@@ -1,7 +1,9 @@
 from django.urls import path
-from pages.views import home, posts
+from pages.views import post_list, post_detail
+
+app_name = 'blog'
 
 urlpatterns = [
-    path('home', home, name='home'),
-    path('post', posts, name='post')  # Add a new URL for users
+    path('', post_list, name='post_list'),
+    path('<int:id>/', post_detail, name='post_detail')  # Add a new URL for users
 ]
