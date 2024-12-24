@@ -1,8 +1,9 @@
 from django.contrib import admin
-from pages.models import Post
+from .models import Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'publish', 'status']
-    list_filter = ['status', 'created', 'publish',]
+    list_display = ['title', 'status']
+    # list_filter = ['status', 'created', 'publish',]
     search_fields = ['title', 'body']
+    list_editable = ['status']
